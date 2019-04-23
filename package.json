@@ -1,0 +1,21 @@
+{
+  "name": "self-referenced-object",
+  "version": "1.0.0",
+  "description": "resolves objects with values that self-reference other properties in the same object",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava tests"
+  },
+  "author": "alex leon <alex@leon.st>",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "babel-cli": "^6.26.0"
+  },
+  "keywords": [
+    "self-reference",
+    "self-referencing",
+    "object",
+    "config"
+  ]
+}
