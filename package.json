@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "resolves objects with values that self-reference other properties in the same object",
   "main": "index.js",
+  "repository": "alex-e-leon/self-referenced-object",
   "scripts": {
     "test": "nyc ava tests",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
