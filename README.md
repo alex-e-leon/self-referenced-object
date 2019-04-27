@@ -11,7 +11,7 @@ This package allows you to define all your properties in a single statement in a
 
 self-referenced-object behaves just like regular template literal expressions,
 except that inside `${}` expressions it allows the use of `this.[key]` to reference other properties inside the same object,
-and uses regular strings (`'` or `"`) instead of template strings (`\``).
+and uses regular strings (`'` or `"`) instead of template strings (`` ` ``).
 
 ```js
 $ npm install self-referenced-object 
@@ -60,7 +60,7 @@ If you need to use `}` inside your template literal expressions, they can be esc
 
 ## Security
 
-self-referenced-object evaluates any expressions inside template literals by calling `Function('"use strict"; return \`' + expression + "\`;")()` which is a marginally safer version of `eval` (ie still incredibly unsafe), so don't pass in any untrusted data into template literal expressions.
+self-referenced-object evaluates any expressions inside template literals by calling ``Function('"use strict"; return `' + expression + "`;")()`` which is a marginally safer version of `eval` (ie still incredibly unsafe), so don't pass in any untrusted data into template literal expressions.
 
 <!-- Definitions -->
 
