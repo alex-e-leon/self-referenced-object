@@ -4,13 +4,16 @@
   "description": "resolves objects with values that self-reference other properties in the same object",
   "main": "index.js",
   "scripts": {
-    "test": "ava tests"
+    "test": "nyc ava tests",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "author": "alex leon <alex@leon.st>",
   "license": "ISC",
   "devDependencies": {
     "ava": "^1.4.1",
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "codecov": "^3.3.0",
+    "nyc": "^14.0.0"
   },
   "keywords": [
     "self-reference",

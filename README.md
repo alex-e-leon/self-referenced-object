@@ -1,4 +1,4 @@
-# self-referenced-object
+# self-referenced-object [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
 
 Build and resolve objects with self-referencing properties.
 
@@ -60,4 +60,14 @@ If you need to use `}` inside your template literal expressions, they can be esc
 
 ## Security
 
-self-referenced-object evaluates any expressions inside template literals by calling `Function('"use strict"; return `' + expression + "`;")()` which is a marginally safer version of `eval` (ie still incredibly unsafe), so don't pass in any untrusted data into template literal expressions.
+self-referenced-object evaluates any expressions inside template literals by calling `Function('"use strict"; return \`' + expression + "\`;")()` which is a marginally safer version of `eval` (ie still incredibly unsafe), so don't pass in any untrusted data into template literal expressions.
+
+<!-- Definitions -->
+
+[build-badge]: https://img.shields.io/travis/alex-e-leon/self-referenced-object.svg
+
+[build-status]: https://travis-ci.org/alex-e-leon/self-referenced-object
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/alex-e-leon/self-referenced-object.svg
+
+[coverage-status]: https://codecov.io/github/alex-e-leon/self-referenced-object
