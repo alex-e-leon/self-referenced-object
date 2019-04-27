@@ -1,6 +1,6 @@
 {
   "name": "self-referenced-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "resolves objects with values that self-reference other properties in the same object",
   "main": "index.js",
   "repository": "alex-e-leon/self-referenced-object",
