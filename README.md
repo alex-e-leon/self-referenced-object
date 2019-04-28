@@ -41,7 +41,9 @@ sro({
   a: {
     a: 'a',
   },
-  b: '${this.a.a}',
+  b: {
+    a: '${this.a.a}',
+  }
 });
 ```
 
@@ -53,6 +55,10 @@ It uses a backtracking DFS to track circular references.
 ## Non-string values
 
 The other way in which self-referenced-object differs from regular template strings is it's support for returning non-string values. In order to support self-references that might be numbers, arrays, objects etc. self-referenced-object will avoid casting the value to a string if the template is only a single `${}` expression. Ie in `{ a: [1,2,3], b: "${this.a}" }` b would be an Array, while in `{ a: [1,2,3], b: "${this.a} go" }`, b would be the string `"1,2,3 go"`
+
+## Nested objects and values
+
+self-referenced-object supports both nested references (ie `${this.x.x}`) and nested objects (ie it will recursively traverse any children objects up to any depth);
 
 ## Escape characters
 

@@ -54,9 +54,17 @@ const sro = object => {
     return value;
   }
 
-  Object.entries(object).forEach(([key, value]) => {
-    object[key] = parseValue(value);
-  });
+  const parseObject = (currentObject) => {
+    Object.entries(currentObject).forEach(([key, value]) => {
+      if (typeof value  === 'object') {
+        parseObject(value);
+      } else {
+        currentObject[key] = parseValue(value);
+      }
+    });
+  }
+
+  parseObject(object);
   return object;
 };
 

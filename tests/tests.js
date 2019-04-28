@@ -93,12 +93,16 @@ test('deep references', t => {
     a: {
       a: 'a',
     },
-    b: '${this.a.a}',
+    b: {
+      a: '${this.a.a}',
+    }
   }), {
     a: {
       a: 'a',
     },
-    b: 'a',
+    b: {
+      a: 'a',
+    },
   });
 });
 
