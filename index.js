@@ -32,7 +32,7 @@ const sro = object => {
       return value;
     }
     // lookup any `this` values
-    const expression = value.replace(/this\.[A-Za-z0-9_.]+/g, thisMatch => {
+    const expression = value.replace(/this\.[A-Za-z0-9_.-]+/g, thisMatch => {
       return JSON.stringify(lookup(thisMatch.slice(5)));
     });
 
