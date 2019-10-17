@@ -66,7 +66,7 @@ If you need to use `}` inside your template literal expressions, they can be esc
 
 ## Security
 
-self-referenced-object evaluates any expressions inside template literals by calling ``Function('"use strict"; return `' + expression + "`;")()`` which is a marginally safer version of `eval` (ie still incredibly unsafe), so don't pass in any untrusted data into template literal expressions.
+self-referenced-object evaluates any expressions inside template literals by calling ``Function('"use strict"; return `' + expression + "`;")()`` which is a marginally safer version of `eval` (ie still incredibly unsafe), so you should avoid passing any untrusted data into an object evaluated by sro (or at least don't self-reference untrusted data in an sro evaluated object).
 
 <!-- Definitions -->
 
