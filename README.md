@@ -33,7 +33,7 @@ sro({
 // non-primative types
 sro({
   a: [1, 2, 3],
-  b: '${(this.a).concat([4])},
+  b: '${(this.a).concat([4])}',
 });
 
 // nested values

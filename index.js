@@ -25,6 +25,7 @@ const evaluateTemplateLiteral = expression => {
 
 // Uses backtracking DFS to traverse object graph
 const sro = object => {
+  const parsedValues = {};
   const checkedReferences = [];
 
   const parseValue= (value) => {
@@ -32,8 +33,14 @@ const sro = object => {
       return value;
     }
     // lookup any `this` values
-    const expression = value.replace(/this\.[A-Za-z0-9_.]+/g, thisMatch => {
-      return JSON.stringify(lookup(thisMatch.slice(5)));
+    const expression = value.replace(/this\.[A-Za-z0-9_.-]+/g, thisMatch => {
+      const key = thisMatch.slice(5)
+
+      if (!Object.prototype.hasOwnProperty.call(parsedValues, key)) {
+        parsedValues[key] = lookup(key);
+      }
+
+      return JSON.stringify(parsedValues[key]);
     });
 
     return evaluateTemplateLiteral(expression);
